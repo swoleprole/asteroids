@@ -38,6 +38,11 @@ def main():
                 pygame.time.delay(1000)
                 print("Game over!")
                 sys.exit()
+        for asteroid in asteroids:
+            for shot in shots:
+                if asteroid.collide(shot):
+                    shot.kill()
+                    asteroid.kill()
         for sprite in drawable:
             sprite.draw(screen)
         pygame.display.flip()
