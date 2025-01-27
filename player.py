@@ -4,9 +4,12 @@ from constants import PLAYER_RADIUS, PLAYER_TURN_SPEED, PLAYER_SPEED
 
 import pygame
 
-class Player(CircleShape):
+from pygame.sprite import Sprite
+
+class Player(CircleShape, Sprite):
     def __init__(self, x, y):
         super().__init__(x, y, PLAYER_RADIUS)
+        Sprite.__init__(self)
         self.rotation = 0
 
     def triangle(self):
